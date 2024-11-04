@@ -7,7 +7,9 @@ apiKey: str = os.getenv("API_KEY")
 apiUrl: str = os.getenv("API_URL")
 
 def main():
-    process(apiKey, apiUrl)
+    last_win = process(apiKey, apiUrl)
+
+    print(last_win)
 
 
 if __name__ == "__main__":
