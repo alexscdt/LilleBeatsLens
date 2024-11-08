@@ -14,13 +14,11 @@ def process(apiKey: str, apiUrl: str) -> str:
                (match['teams']['home']['name'] == 'Lens' and match['teams']['home']['winner'])
         ]
 
-        # Convert to timezone-aware datetime (UTC) for each match date
         last_win = max(
             datetime.fromisoformat(match['fixture']['date'].replace("Z", "+00:00"))
             for match in matchs_wins
         )
 
-        # Use datetime.now(timezone.utc) to get the current UTC time with timezone information
         now = datetime.now(timezone.utc)
         difference = relativedelta(now, last_win)
 
