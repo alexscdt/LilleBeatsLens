@@ -1,8 +1,15 @@
 from fetch_data import fetch_data
 from datetime import datetime, timezone
 from dateutil.relativedelta import relativedelta
+import locale
 
 def process(apiKey: str, apiUrl: str) -> str:
+    try:
+        locale.setlocale(locale.LC_TIME, 'fr_FR.UTF-8')
+    except locale.Error:
+        print("La locale 'fr_FR.UTF-8' n'est pas disponible sur ce système. Assurez-vous qu'elle est installée.")
+        return "Erreur de configuration de la langue."
+
     responses = fetch_data(apiKey, apiUrl)
 
     if responses.status_code == 200:
