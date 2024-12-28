@@ -93,6 +93,18 @@ def generate_audio_text(fulltext: List[str]):
 
     return audio_comp, text_comp
 
+def get_random_video_file():
+
+    video_list = []
+
+    for path, subdirs, files in os.walk('./video'):
+        for name in files:
+            if name.endswith('.mp4'):
+                video_list.append(os.path.join(path, name))
+
+
+    return str(video_list[random.randrange(len(video_list))])
+
 def start_generate_video(text: str):
     console = Console()
 
@@ -110,9 +122,11 @@ def start_generate_video(text: str):
     <THANK YOU>
     """
 
+    video_file: str = get_random_video_file()
+
     console.print("\n\n[light_green] Task Starting\n\n")
     generate_video(content=text,
-                   video_file=video_background_file,
+                   video_file=video_file,
                    image_file=image_banner_file,
                    outfile=output_file,
                    offset=video_background_offset)
