@@ -78,7 +78,7 @@ def generate_audio_text(fulltext: List[str]):
 
         text_clip = TextClip(
             text=text,
-            font='Helvetica',
+            font='./fonts/RobotoMono-BoldItalic.ttf',
             font_size=32,
             color="white",
             text_align='center',
@@ -123,7 +123,6 @@ def start_generate_video(text: str):
     """
 
     video_file: str = get_random_video_file()
-
     console.print("\n\n[light_green] Task Starting\n\n")
     generate_video(content=text,
                    video_file=video_file,
