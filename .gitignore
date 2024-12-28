@@ -166,3 +166,6 @@ cython_debug/
 /src/output
 /src/temp_assets
 
+.DS_Store
+myenv/
+src/.DS_Store
