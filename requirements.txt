@@ -2,3 +2,7 @@ python-dotenv~=1.0.1
 requests~=2.32.3
 tweepy~=4.14.0
 python-dateutil~=2.9.0.post0
+moviepy~=2.1.1
+gTTS~=2.5.4
+rich~=13.9.4
+pyfiglet~=1.0.2

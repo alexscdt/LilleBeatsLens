@@ -3,7 +3,7 @@ from datetime import datetime, timezone
 from dateutil.relativedelta import relativedelta
 import locale
 
-def process(apiKey: str, apiUrl: str) -> str:
+def process(apiKey: str, apiUrl: str) -> [str]:
     try:
         locale.setlocale(locale.LC_TIME, 'fr_FR.UTF-8')
     except locale.Error:
@@ -30,7 +30,7 @@ def process(apiKey: str, apiUrl: str) -> str:
         difference = relativedelta(now, last_win)
 
         return (
-            f"Lens n'a pas gagné de match contre Lille depuis le {last_win.strftime('%d %B %Y')}, "
+            f"Lens n'a pas gagné de match contre Lille, depuis le {last_win.strftime('%d %B %Y')}, "
             f"soit {difference.years} années, {difference.months} mois et {difference.days} jours."
         )
     else:

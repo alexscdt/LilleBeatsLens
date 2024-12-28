@@ -1,5 +1,6 @@
 from data_processor import process
 from post_tweet import post_tweet
+from generate_video import start_generate_video
 from dotenv import load_dotenv
 import os
 
@@ -16,6 +17,7 @@ XAccessTokenSecret: str = os.getenv("X_ACCESS_TOKEN_SECRET")
 def main():
     last_win_message = process(apiKey, apiUrl)
     post_tweet(last_win_message, XApiKey, XApiSecret, XAccessToken, XAccessTokenSecret)
+    start_generate_video(last_win_message)
 
 if __name__ == "__main__":
     main()
