@@ -15,12 +15,10 @@ XApiSecret: str = os.getenv("X_API_SECRET_KEY")
 XAccessToken: str = os.getenv("X_ACCESS_TOKEN")
 XAccessTokenSecret: str = os.getenv("X_ACCESS_TOKEN_SECRET")
 
-TikTokSessionId: str = os.getenv("TIKTOK_SESSION_ID")
-
 def main():
     last_win_message = process(apiKey, apiUrl)
     post_tweet(last_win_message, XApiKey, XApiSecret, XAccessToken, XAccessTokenSecret)
-    post_tiktok(last_win_message,TikTokSessionId)
+    post_tiktok(last_win_message)
 
 if __name__ == "__main__":
     main()

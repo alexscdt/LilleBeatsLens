@@ -2,7 +2,7 @@ from generate_video import start_generate_video
 from playwright.sync_api import Page, expect, sync_playwright
 import json
 
-def post_tiktok(last_win_message: str, TikTokSessionId: str):
+def post_tiktok(last_win_message: str):
     video_generated = start_generate_video(last_win_message)
 
     if not video_generated:
