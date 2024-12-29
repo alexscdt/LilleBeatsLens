@@ -1,5 +1,3 @@
-from pytest_playwright.pytest_playwright import browser
-
 from generate_video import start_generate_video
 from playwright.sync_api import Page, expect, sync_playwright
 import json
@@ -38,11 +36,3 @@ def post_tiktok(last_win_message: str, TikTokSessionId: str):
 
         page.wait_for_url("https://www.tiktok.com/tiktokstudio/content", timeout=10000000)
         browser.close()
-
-
-
-def main():
-    post_tiktok('salut')
-
-if __name__ == "__main__":
-    main()

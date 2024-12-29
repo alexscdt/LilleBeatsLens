@@ -19,7 +19,7 @@ TikTokSessionId: str = os.getenv("TIKTOK_SESSION_ID")
 
 def main():
     last_win_message = process(apiKey, apiUrl)
-    #post_tweet(last_win_message, XApiKey, XApiSecret, XAccessToken, XAccessTokenSecret)
+    post_tweet(last_win_message, XApiKey, XApiSecret, XAccessToken, XAccessTokenSecret)
     post_tiktok(last_win_message,TikTokSessionId)
 
 if __name__ == "__main__":
