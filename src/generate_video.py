@@ -111,23 +111,14 @@ def start_generate_video(text: str):
     if not os.path.exists("temp_assets"):
         os.mkdir("temp_assets")
 
-    video_background_file = './video/But1_26_10_24.mp4'
-    video_background_offset = 0
-    image_banner_file = ""
-    output_file = "./output/video.mp4"
-
-    content = """<YOUR STORY>
-    <RECOMMENDED TO SPLIT PER LINES>
-    <IF YOU WANT TO DISPLAY SUBTITLES IN THIS ORDER>
-    <THANK YOU>
-    """
-
     video_file: str = get_random_video_file()
     console.print("\n\n[light_green] Task Starting\n\n")
     generate_video(content=text,
                    video_file=video_file,
-                   image_file=image_banner_file,
-                   outfile=output_file,
-                   offset=video_background_offset)
+                   image_file='',
+                   outfile="./output/video.mp4",
+                   offset=0)
 
     console.print("\n\n[light_green] Completed!")
+
+    return True
